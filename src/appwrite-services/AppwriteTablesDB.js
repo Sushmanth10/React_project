@@ -9,7 +9,7 @@ class AppwriteTablesDB {
     async getAllRecords(dbId, tableId) {
         const records = await this.tablesDb.listRows({
             databaseId: dbId,
-            tableId: tableId
+            tableId: tableId 
         })
         return records?.rows;
     }

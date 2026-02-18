@@ -9,7 +9,7 @@ function App() {
 
     const appwriteAccount = new AppwriteAccount();
     const setUser = useUserStore((state) => state.setUser)
-    console.log("/Page App components rendered!")
+    console.log("/Page App components rendered!") 
 
     const navigate = useNavigate();
 

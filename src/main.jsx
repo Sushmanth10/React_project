@@ -14,7 +14,9 @@ import AdminDashboardLayout from './pages/admin/AdminDashboardLayout.jsx';
 import AdminCoursesPages from './pages/admin/AdminCoursesPages.jsx';
 import AdminQuizesPages from './pages/admin/AdminQuizesPages.jsx';
 import AdminTransactionsPages from './pages/admin/AdminTransactionsPages.jsx';
-
+import { QueryClientProvider } from '@tanstack/react-query';
+import queryClient from './utils/queryClient.jsx';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const router = createBrowserRouter([
     {
@@ -73,7 +75,10 @@ const router = createBrowserRouter([
 const rootDiv = document.getElementById("root");
 createRoot(rootDiv).render(
     <>
-        <RouterProvider router={router} />
-        <ToastContainer />
+        <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+             <ReactQueryDevtools initialIsOpen={false} />
+            <ToastContainer />
+        </QueryClientProvider>
     </>
 )

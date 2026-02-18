@@ -8,9 +8,9 @@ const TodoEditor = () => {
     setTodotext(event.target.value); 
   }
 
-  const handleTodoSubmission = () => {
+  const handleTodoSubmission = (event) => {
     try {
-      event.preventDefaut();
+      event.preventDefault();
       createTodo(todotext)
     } catch (error) {
       console.error(error);
