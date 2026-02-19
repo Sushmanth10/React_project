@@ -25,8 +25,8 @@ const ProfilePage = () => {
       <form>
 
         <div>          
-        <p >{currentUser ? currentUser.name: 'Loading...'} </p>     
-        <p >{currentUser ? currentUser.email: 'Loading...'} </p>     
+        <p >{currentUser ? currentUser.name: 'Loading...'} </p>     {/* conditional rendering, terminary operator*/}
+        <p >{currentUser ? currentUser.email: 'Loading...'} </p>    {/*terminary operator*/}
         </div>
         
 
