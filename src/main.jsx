@@ -17,6 +17,7 @@ import AdminTransactionsPages from './pages/admin/AdminTransactionsPages.jsx';
 import { QueryClientProvider } from '@tanstack/react-query';
 import queryClient from './utils/queryClient.jsx';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import CounterPage from './pages/CounterPage.jsx';
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: "todo",
                 element: <TodoAppPage />
+            },
+            {
+                path: "counter",
+                element: <CounterPage />
             }
         ]
     },
@@ -77,7 +82,7 @@ createRoot(rootDiv).render(
     <>
         <QueryClientProvider client={queryClient}>
             <RouterProvider router={router} />
-             <ReactQueryDevtools initialIsOpen={false} />
+            <ReactQueryDevtools initialIsOpen={false} />
             <ToastContainer />
         </QueryClientProvider>
     </>
